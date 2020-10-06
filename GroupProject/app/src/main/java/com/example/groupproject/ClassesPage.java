@@ -1,16 +1,13 @@
 package com.example.groupproject;
 
 import androidx.appcompat.app.AppCompatActivity;
-
 import android.os.Bundle;
 
-public class MainActivity extends AppCompatActivity {
+public class ClassesPage extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
-
-        int y = 0;
+        setContentView(R.layout.activity_classes_page);
     }
 }
