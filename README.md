@@ -29,7 +29,7 @@ An Events page showing the (Time-Date_Location_Description) this will aslo be wh
 And the abilty to display what classes you are in to other students in those classes 
 
 
-## Risky Conmonents 
+## Risky Components 
 
 
 
