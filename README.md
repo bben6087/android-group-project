@@ -8,7 +8,7 @@
 
 # Describe the problem/issue your app is going to address.
 
-Getting a study group together with your classmates
+Getting a study group together with your classmates that share classes with you
 
 
 
