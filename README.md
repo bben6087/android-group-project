@@ -32,5 +32,6 @@ And the abilty to display what classes you are in to other students in those cla
 
 
 Calendar - We are unsure on how to implent this yet 
+
 Messaging - It would be difficult to create because we are unsure how to and it would require the use of an API
 
