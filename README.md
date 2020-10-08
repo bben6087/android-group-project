@@ -1,4 +1,6 @@
-# StudySesh
+# android-group-project
+
+## StudySesh
 
 
 
@@ -6,7 +8,7 @@
 
 
 
-# Describe the problem/issue your app is going to address.
+## Describe the problem/issue your app is going to address.
 
 Getting a study group together with your classmates that share classes with you
 
@@ -15,7 +17,7 @@ Getting a study group together with your classmates that share classes with you
 
 
 
-# The app will have
+## The app will have
 
 
 
@@ -27,7 +29,7 @@ An Events page showing the (Time-Date_Location_Description) this will aslo be wh
 And the abilty to display what classes you are in to other students in those classes 
 
 
-# Risky Conmonents 
+## Risky Conmonents 
 
 
 
@@ -36,5 +38,5 @@ Calendar - We are unsure on how to implent this yet
 Messaging - It would be difficult to create because we are unsure how to and it would require the use of an API
 
 
-# Sources 
+## Sources 
 
