@@ -7,6 +7,7 @@
     tools:context=".SchedulePage">
 
     <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerView2"
         android:layout_width="0dp"
         android:layout_height="302dp"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -14,7 +15,7 @@
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.0" >
+        app:layout_constraintVertical_bias="0.0">
 
     </androidx.recyclerview.widget.RecyclerView>
 
@@ -22,11 +23,13 @@
         android:id="@+id/classET"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="40dp"
         android:ems="10"
         android:hint="Class Name"
         android:inputType="textPersonName"
-        tools:layout_editor_absoluteX="9dp"
-        tools:layout_editor_absoluteY="328dp" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/recyclerView2" />
 
     <EditText
         android:id="@+id/monthET"
@@ -35,8 +38,10 @@
         android:ems="10"
         android:hint="MM"
         android:inputType="textPersonName"
-        tools:layout_editor_absoluteX="11dp"
-        tools:layout_editor_absoluteY="404dp" />
+        app:layout_constraintBottom_toTopOf="@+id/timeET"
+        app:layout_constraintStart_toStartOf="@+id/classET"
+        app:layout_constraintTop_toTopOf="@+id/dayET"
+        app:layout_constraintVertical_bias="0.0" />
 
     <EditText
         android:id="@+id/dayET"
@@ -45,8 +50,10 @@
         android:ems="10"
         android:hint="DD"
         android:inputType="textPersonName"
-        tools:layout_editor_absoluteX="74dp"
-        tools:layout_editor_absoluteY="404dp" />
+        app:layout_constraintBottom_toTopOf="@+id/timeET"
+        app:layout_constraintEnd_toStartOf="@+id/yearET"
+        app:layout_constraintStart_toEndOf="@+id/monthET"
+        app:layout_constraintTop_toBottomOf="@+id/classET" />
 
     <EditText
         android:id="@+id/yearET"
@@ -55,24 +62,28 @@
         android:ems="10"
         android:hint="YYYY"
         android:inputType="textPersonName"
-        tools:layout_editor_absoluteX="144dp"
-        tools:layout_editor_absoluteY="404dp" />
+        app:layout_constraintBottom_toTopOf="@+id/timeET"
+        app:layout_constraintEnd_toEndOf="@+id/classET"
+        app:layout_constraintTop_toTopOf="@+id/dayET"
+        app:layout_constraintVertical_bias="0.0" />
 
     <EditText
         android:id="@+id/timeET"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="80dp"
         android:ems="10"
         android:hint="Time"
         android:inputType="textPersonName"
-        tools:layout_editor_absoluteX="9dp"
-        tools:layout_editor_absoluteY="476dp" />
+        app:layout_constraintStart_toStartOf="@+id/monthET"
+        app:layout_constraintTop_toBottomOf="@+id/classET" />
 
     <Button
         android:id="@+id/button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="36dp"
         android:text="Button"
-        tools:layout_editor_absoluteX="262dp"
-        tools:layout_editor_absoluteY="654dp" />
+        app:layout_constraintStart_toStartOf="@+id/timeET"
+        app:layout_constraintTop_toBottomOf="@+id/timeET" />
 </androidx.constraintlayout.widget.ConstraintLayout>
