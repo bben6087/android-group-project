@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".CoursePage">
+
+    <Button
+        android:id="@+id/toSchedulerBTN"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="To Schedule"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.053"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.502" />
+
+    <Button
+        android:id="@+id/toCalBTN"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="164dp"
+        android:text="To Calender"
+        app:layout_constraintBottom_toBottomOf="@+id/toSchedulerBTN"
+        app:layout_constraintStart_toEndOf="@+id/toSchedulerBTN"
+        app:layout_constraintTop_toTopOf="@+id/toSchedulerBTN"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <Button
+        android:id="@+id/toMessageBTN"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="To Messenger"
+        app:layout_constraintEnd_toStartOf="@+id/toCalBTN"
+        app:layout_constraintStart_toEndOf="@+id/toSchedulerBTN"
+        app:layout_constraintTop_toTopOf="@+id/toSchedulerBTN" />
+</androidx.constraintlayout.widget.ConstraintLayout>
