@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#DD3B3B"
     tools:context=".MainActivity">
 
     <TextView
@@ -11,52 +12,72 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Login Page"
+        android:textColor="#FFFFFF"
+        android:textSize="25sp"
+        android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.112" />
+        app:layout_constraintVertical_bias="0.334" />
 
     <Button
         android:id="@+id/loginBTN"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:background="@drawable/rounded_corner"
         android:onClick="goClassPage"
         android:text="Login"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.092"
+        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/loginTV"
-        app:layout_constraintVertical_bias="0.614" />
+        app:layout_constraintVertical_bias="0.643" />
 
     <EditText
         android:id="@+id/nameET"
-        android:layout_width="wrap_content"
+        android:layout_width="350dp"
         android:layout_height="wrap_content"
+        android:background="@drawable/rounded_corner"
+        android:backgroundTint="#FFFFFF"
         android:ems="10"
         android:hint="Name (First, Last)"
         android:inputType="textPersonName"
+        android:padding="40px"
+        android:textColor="#000000"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.149"
+        app:layout_constraintHorizontal_bias="0.491"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.46" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
         android:id="@+id/snumET"
-        android:layout_width="wrap_content"
+        android:layout_width="350dp"
         android:layout_height="wrap_content"
+        android:background="@drawable/rounded_corner"
         android:ems="10"
         android:hint="S #"
         android:inputType="textPersonName"
+        android:padding="40px"
+        android:textColor="#000000"
         app:layout_constraintBottom_toTopOf="@+id/loginBTN"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.149"
+        app:layout_constraintHorizontal_bias="0.491"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/nameET"
-        app:layout_constraintVertical_bias="0.401" />
+        app:layout_constraintVertical_bias="0.376" />
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="268dp"
+        android:layout_height="130dp"
+        app:layout_constraintBottom_toTopOf="@+id/loginTV"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/logo" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
