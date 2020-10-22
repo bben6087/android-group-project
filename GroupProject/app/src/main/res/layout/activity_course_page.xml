@@ -4,12 +4,15 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#DD3B3B"
     tools:context=".CoursePage">
 
     <Button
         android:id="@+id/toSchedulerBTN"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:background="@drawable/rounded_corner"
+        android:backgroundTint="#FFFFFF"
         android:text="To Schedule"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -23,6 +26,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="164dp"
+        android:background="@drawable/rounded_corner"
+        android:backgroundTint="#FFFFFF"
         android:text="To Calender"
         app:layout_constraintBottom_toBottomOf="@+id/toSchedulerBTN"
         app:layout_constraintStart_toEndOf="@+id/toSchedulerBTN"
@@ -33,8 +38,25 @@
         android:id="@+id/toMessageBTN"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:background="@drawable/rounded_corner"
+        android:backgroundTint="#FFFFFF"
         android:text="To Messenger"
         app:layout_constraintEnd_toStartOf="@+id/toCalBTN"
         app:layout_constraintStart_toEndOf="@+id/toSchedulerBTN"
         app:layout_constraintTop_toTopOf="@+id/toSchedulerBTN" />
+
+    <TextView
+        android:id="@+id/courseTV"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="#FFFFFF"
+        android:textSize="36sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/toMessageBTN"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.259" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

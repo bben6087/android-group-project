@@ -7,10 +7,11 @@
     <TextView
         android:id="@+id/courseNameTV"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="83dp"
         android:ems="100"
         android:text="Course"
         android:textAppearance="@style/TextAppearance.AppCompat.Large"
-        android:textColor="#0C0C0C"
-        android:textSize="30sp" />
+        android:textColor="#FFFFFF"
+        android:textSize="30sp"
+        android:textStyle="bold" />
 </LinearLayout>

@@ -17,7 +17,8 @@ import android.widget.TextView;
 import java.text.DecimalFormat;
 
 public class ClassesPage extends AppCompatActivity {
-
+    public static String KEY_COURSE = "KEY_COURSE";
+    public String course;
     private RecyclerView classRV = null;
     private GestureDetectorCompat detector = null;
     private ClassesModel myModel = null;
@@ -32,6 +33,7 @@ public class ClassesPage extends AppCompatActivity {
                 if (holder instanceof ClassesAdapter.ClassesViewHolder) {
                     int position = holder.getAdapterPosition();
                     // handle single tap
+                    course = myModel.getPosition(position);
                     goCourse(view);
                     return true; // Use up the tap gesture
                 }
@@ -43,6 +45,7 @@ public class ClassesPage extends AppCompatActivity {
 
     public void goCourse(View v) {
         Intent ini = new Intent(this, CoursePage.class);
+        ini.putExtra(KEY_COURSE, course);
         startActivity(ini);
     }
 

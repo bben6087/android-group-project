@@ -3,6 +3,10 @@ package com.example.groupproject;
 import java.util.ArrayList;
 
 public class ClassesModel {
+    public String getPosition(int position) {
+        return ClassesModel.courseList.get(position).course;
+    }
+
     public static class Classes{
         public String course;
 
