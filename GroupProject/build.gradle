@@ -6,9 +6,6 @@ buildscript {
     }
     dependencies {
         classpath "com.android.tools.build:gradle:4.0.1"
-        implementation "androidx.recyclerview:recyclerview:1.1.0"
-        // For control over item selection of both touch and mouse driven selection
-        implementation "androidx.recyclerview:recyclerview-selection:1.1.0-rc03"
 
         // NOTE: Do not place your application dependencies here; they belong
         // in the individual module build.gradle files

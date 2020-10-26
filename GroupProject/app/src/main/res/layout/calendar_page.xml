@@ -69,4 +69,11 @@
         app:layout_constraintTop_toBottomOf="@+id/timeET"
         app:layout_constraintVertical_bias="0.0" />
 
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerDateEvent"
+        android:layout_width="350"
+        android:layout_height="100dp"
+        tools:layout_editor_absoluteX="30dp"
+        tools:layout_editor_absoluteY="42dp" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
