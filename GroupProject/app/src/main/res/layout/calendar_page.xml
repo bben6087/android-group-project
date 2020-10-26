@@ -71,7 +71,7 @@
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recyclerDateEvent"
-        android:layout_width="350"
+        android:layout_width="300dp"
         android:layout_height="100dp"
         android:layout_marginStart="30dp"
         android:layout_marginTop="42dp"

@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.EditText;
+import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
     public static String KEY_NAME = "KEY_NAME";
@@ -19,16 +20,24 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void goClassPage(View v){
+
         EditText nameET = findViewById(R.id.nameET);
         EditText snumET = findViewById(R.id.snumET);
         String nameStr = nameET.getText().toString();
         String snumStr = nameET.getText().toString();
-        Intent otherIni = new Intent(this, ClassesPage.class);
-        otherIni.putExtra(KEY_NAME, nameStr);
-        otherIni.putExtra(KEY_SNUM, snumStr);
-        startActivity(otherIni);
+        if(nameStr == ""){
+            TextView loginET = findViewById(R.id.loginTV);
+            loginET.setText("Invalid username or s#.");
+        }
+        else{
+            Intent otherIni = new Intent(this, ClassesPage.class);
+            otherIni.putExtra(KEY_NAME, nameStr);
+            otherIni.putExtra(KEY_SNUM, snumStr);
+            startActivity(otherIni);
 
-        Log.d("Navigation", "Started other activity");
+            Log.d("Navigation", "Started other activity");
+        }
+
 
     }
 }
