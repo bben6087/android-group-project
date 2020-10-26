@@ -25,7 +25,7 @@ public class MainActivity extends AppCompatActivity {
         EditText snumET = findViewById(R.id.snumET);
         String nameStr = nameET.getText().toString();
         String snumStr = nameET.getText().toString();
-        if(nameStr == ""){
+        if(nameStr == "" || snumStr == ""){
             TextView loginET = findViewById(R.id.loginTV);
             loginET.setText("Invalid username or s#.");
         }
