@@ -26,7 +26,7 @@ Messaging: users can message other students in thier calss in order to set up st
 
 An Events page showing the (Time-Date_Location_Description) this will aslo be where students schedule study sessions with other students 
 
-And the abilty to display what classes you are in to other students in those classes 
+And the ability to display what classes you are in to other students in those classes
 
 
 ## Risky Components 
