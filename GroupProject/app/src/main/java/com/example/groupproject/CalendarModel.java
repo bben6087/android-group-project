@@ -11,6 +11,8 @@ public class CalendarModel {
 
     public static class Calendar{
         public String calendar;
+        public String time;
+        public String name;
 
         public Calendar(String calendar) {
             this.calendar = calendar;

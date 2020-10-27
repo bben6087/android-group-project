@@ -36,9 +36,9 @@ public class CalendarAdapter extends RecyclerView.Adapter<CalendarAdapter.Calend
     //Puts the Array on the recycler view
     @Override
     public void onBindViewHolder(@NonNull CalendarViewHolder holder, int position) {
-        TextView calendarTV = holder.itemView.findViewById(R.id.calendarTV);
-
+        TextView calendarTV = holder.itemView.findViewById(R.id.studentTV);
         calendarTV.setText(theModel.calendarList.get(position).calendar);
+
     }
     //Gets Array size
     @Override
