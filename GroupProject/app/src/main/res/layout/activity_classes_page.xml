@@ -8,7 +8,7 @@
     tools:context=".ClassesPage">
 
     <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/classRV"
+        android:id="@+id/calendarRV"
         android:layout_width="408dp"
         android:layout_height="421dp"
         app:layout_constraintBottom_toBottomOf="parent"

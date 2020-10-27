@@ -56,7 +56,7 @@ public class ClassesPage extends AppCompatActivity {
 
         myAdapter = new ClassesAdapter();
 
-        classRV = findViewById(R.id.classRV);
+        classRV = findViewById(R.id.calendarRV);
         classRV.setAdapter(myAdapter);
 
         LinearLayoutManager lin = new LinearLayoutManager(this);
