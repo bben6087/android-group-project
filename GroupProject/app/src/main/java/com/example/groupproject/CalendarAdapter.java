@@ -17,10 +17,10 @@ public class CalendarAdapter extends RecyclerView.Adapter<CalendarAdapter.Calend
         }
     }
 
-    private calendarModel theModel;
+    private CalendarModel theModel;
 
     public CalendarAdapter() {
-        theModel = calendarModel.getSingleton();
+        theModel = CalendarModel.getSingleton();
     }
     @NonNull
     @Override
@@ -28,7 +28,7 @@ public class CalendarAdapter extends RecyclerView.Adapter<CalendarAdapter.Calend
 
         // Create a TextHolder
         LinearLayout v = (LinearLayout) LayoutInflater.from(parent.getContext())
-                .inflate(R.layout.course_list, parent, false);
+                .inflate(R.layout.calendar_list, parent, false);
         CalendarViewHolder vh = new CalendarViewHolder(v);
         return vh;
 

@@ -2,13 +2,11 @@ package com.example.groupproject;
 
 import java.util.ArrayList;
 
-import static com.example.groupproject.calendarModel.calendarList;
-
-public class calendarModel {
+public class CalendarModel {
     public static ArrayList<Calendar> calendarList;
 
     public String getPosition(int position) {
-        return calendarModel.calendarList.get(position).calendar;
+        return CalendarModel.calendarList.get(position).calendar;
     }
 
     public static class Calendar{
@@ -19,7 +17,7 @@ public class calendarModel {
         }
     }
 
-    private calendarModel(){
+    private CalendarModel(){
         calendarList = new ArrayList<Calendar>();
     }
 
@@ -29,10 +27,10 @@ public class calendarModel {
 
     }
     // Creates the model
-    private static calendarModel theModel = null;
-    public static calendarModel getSingleton(){
+    private static CalendarModel theModel = null;
+    public static CalendarModel getSingleton(){
         if(theModel == null){
-            theModel = new calendarModel();
+            theModel = new CalendarModel();
         }
         return theModel;
     }
