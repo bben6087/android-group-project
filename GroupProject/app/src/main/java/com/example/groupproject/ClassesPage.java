@@ -87,4 +87,9 @@ public class ClassesPage extends AppCompatActivity {
         });
     }
 
+    public void goCally(View v){
+        Intent calender = new Intent();
+        startActivity(calender);
+    }
+
     }

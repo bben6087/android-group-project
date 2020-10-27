@@ -2,7 +2,9 @@ package com.example.groupproject;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.TextView;
 
 public class CoursePage extends AppCompatActivity {
@@ -16,5 +18,15 @@ public class CoursePage extends AppCompatActivity {
         courseName = getIntent().getStringExtra(ClassesPage.KEY_COURSE);
         TextView courseTV = findViewById(R.id.courseTV);
         courseTV.setText(courseName);
+    }
+
+    public void goCally(View v){
+        Intent calender = new Intent();
+        startActivity(calender);
+    }
+
+    public void goMessenger(View v){
+        Intent messengerGo = new Intent();
+        startActivity(messengerGo);
     }
 }
