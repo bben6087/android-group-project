@@ -3,6 +3,8 @@ package com.example.groupproject;
 import java.util.ArrayList;
 
 public class ClassesModel {
+    public static ArrayList<Classes> courseList;
+
     public String getPosition(int position) {
         return ClassesModel.courseList.get(position).course;
     }
@@ -14,11 +16,11 @@ public class ClassesModel {
             this.course = course;
         }
     }
-    public static ArrayList<Classes> courseList;
 
     private ClassesModel(){
         courseList = new ArrayList<Classes>();
     }
+
     //loads objects into array
     private void loadItems(){
         courseList.add(new Classes("Course"));
