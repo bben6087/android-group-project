@@ -21,12 +21,17 @@ public class CoursePage extends AppCompatActivity {
     }
 
     public void goCally(View v){
-        Intent calender = new Intent();
-        startActivity(calender);
+        Intent calenderGo = new Intent(this, CalendarPage.class);
+        startActivity(calenderGo);
     }
 
     public void goMessenger(View v){
-        Intent messengerGo = new Intent();
+        Intent messengerGo = new Intent(this, MessengerPage.class);
         startActivity(messengerGo);
+    }
+
+    public void goScheduler(View v){
+        Intent schedulerGo = new Intent(this, SchedulePage.class);
+        startActivity(schedulerGo);
     }
 }

@@ -12,9 +12,6 @@ import android.view.MotionEvent;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.TextView;
-
-import java.text.DecimalFormat;
 
 public class ClassesPage extends AppCompatActivity {
     public static String KEY_COURSE = "KEY_COURSE";
@@ -88,7 +85,7 @@ public class ClassesPage extends AppCompatActivity {
     }
 
     public void goCally(View v){
-        Intent calender = new Intent();
+        Intent calender = new Intent(this, CalendarPage.class);
         startActivity(calender);
     }
 
