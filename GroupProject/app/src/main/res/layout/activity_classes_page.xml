@@ -9,14 +9,14 @@
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/calendarRV"
-        android:layout_width="408dp"
-        android:layout_height="421dp"
+        android:layout_width="396dp"
+        android:layout_height="349dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintHorizontal_bias="0.466"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.0" />
+        app:layout_constraintVertical_bias="0.141" />
 
     <Button
         android:id="@+id/addBTN"
@@ -25,7 +25,7 @@
         android:layout_marginBottom="224dp"
         android:background="@drawable/rounded_corner"
         android:backgroundTint="#FFFFFF"
-        android:text="Add"
+        android:text="Add Course"
         app:layout_constraintBottom_toBottomOf="@+id/classET"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.854"
@@ -62,5 +62,19 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/addBTN"
         app:layout_constraintVertical_bias="0.957" />
+
+    <TextView
+        android:id="@+id/classTitleTV"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Course List"
+        android:textColor="#FFFFFF"
+        android:textSize="35sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/calendarRV"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
