@@ -28,7 +28,7 @@ public class MessengerAdapter extends RecyclerView.Adapter <MessengerAdapter.Mes
 
         // Create a TextHolder
         LinearLayout v = (LinearLayout) LayoutInflater.from(parent.getContext())
-                .inflate(R.layout.messenger_list, parent, false);
+                .inflate(R.layout.message_list, parent, false);
         MessageViewHolder vh = new MessageViewHolder(v);
         return vh;
 
