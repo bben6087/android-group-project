@@ -7,27 +7,28 @@
     android:background="#DD3B3B">
 
     <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/recyclerView"
-        android:layout_width="411dp"
-        android:layout_height="481dp"
+        android:id="@+id/messageRV"
+        android:layout_width="404dp"
+        android:layout_height="367dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.428"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.0" />
+        app:layout_constraintVertical_bias="0.293" />
 
     <EditText
         android:id="@+id/messageET"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="24dp"
-        android:layout_marginEnd="32dp"
+        android:layout_marginTop="88dp"
+        android:layout_marginEnd="24dp"
         android:background="@drawable/rounded_corner"
         android:ems="10"
         android:hint="Enter message here"
         android:inputType="textPersonName"
         app:layout_constraintEnd_toStartOf="@+id/sendBTN"
-        app:layout_constraintTop_toBottomOf="@+id/recyclerView" />
+        app:layout_constraintTop_toBottomOf="@+id/messageRV" />
 
     <Button
         android:id="@+id/sendBTN"
@@ -39,4 +40,18 @@
         app:layout_constraintBottom_toBottomOf="@+id/messageET"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/messageET" />
+
+    <TextView
+        android:id="@+id/messageTitleTV"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Messenger"
+        android:textColor="#FFFFFF"
+        android:textSize="30sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/messageRV"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>

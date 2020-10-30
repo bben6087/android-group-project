@@ -36,7 +36,7 @@ public class MessengerAdapter extends RecyclerView.Adapter <MessengerAdapter.Mes
     //Puts the Array on the recycler view
     @Override
     public void onBindViewHolder(@NonNull MessageViewHolder holder, int position) {
-        TextView messageTV = holder.itemView.findViewById(R.id.courseNameTV);
+        TextView messageTV = holder.itemView.findViewById(R.id.messageTV);
 
         messageTV.setText(theModel.messages.get(position).messages);
     }

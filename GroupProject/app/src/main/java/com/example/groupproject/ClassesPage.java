@@ -13,11 +13,14 @@ import android.view.MotionEvent;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 
 public class ClassesPage extends AppCompatActivity {
     public static String KEY_COURSE = "KEY_COURSE";
     public String course;
+    private String snum;
+    private String name;
     private RecyclerView classRV = null;
     private GestureDetectorCompat detector = null;
     private ClassesModel myModel = null;
@@ -53,9 +56,13 @@ public class ClassesPage extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_classes_page);
+        snum = getIntent().getStringExtra(MainActivity.KEY_SNUM);
+        name = getIntent().getStringExtra(MainActivity.KEY_NAME);
+        TextView loginTitleTV = findViewById(R.id.loginTitleTV);
+        loginTitleTV.setText("Logged in as: " + name + "\n S#: " + snum);
+
 
         myModel= ClassesModel.getSingleton();
-
         myAdapter = new ClassesAdapter();
 
         classRV = findViewById(R.id.calendarRV);
