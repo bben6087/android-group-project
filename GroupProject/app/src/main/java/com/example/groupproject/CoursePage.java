@@ -29,9 +29,4 @@ public class CoursePage extends AppCompatActivity {
         Intent messengerGo = new Intent(this, MessengerPage.class);
         startActivity(messengerGo);
     }
-
-    public void goScheduler(View v){
-        Intent schedulerGo = new Intent(this, SchedulePage.class);
-        startActivity(schedulerGo);
-    }
 }
