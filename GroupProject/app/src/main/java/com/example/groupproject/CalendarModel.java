@@ -14,8 +14,10 @@ public class CalendarModel {
         public String time;
         public String name;
 
-        public Calendar(String calendar) {
+        public Calendar(String name, String calendar, String time) {
             this.calendar = calendar;
+            this.time = time;
+            this.name = name;
         }
     }
 
@@ -25,7 +27,7 @@ public class CalendarModel {
 
     //loads objects into array
     private void loadItems(){
-        calendarList.add(new Calendar("Course"));
+        calendarList.add(new Calendar("Steve", "Course", "12 Monday"));
 
     }
     // Creates the model

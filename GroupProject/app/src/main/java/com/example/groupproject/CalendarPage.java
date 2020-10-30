@@ -38,21 +38,13 @@ public class CalendarPage extends AppCompatActivity {
             public void onClick(View v) {
                 EditText studentET = findViewById(R.id.studentET);
                 String studentStr = studentET.getText().toString();
-
-                myModel.calendarList.add(
-                        new CalendarModel.Calendar(studentStr));
                 //Add more edit texts to update adapter and recycler view
                 EditText calendarET = findViewById(R.id.calendarET);
                 String calendarStr = calendarET.getText().toString();
-
-                myModel.calendarList.add(
-                        new CalendarModel.Calendar(calendarStr));
-
                 EditText timeET = findViewById(R.id.timeET);
                 String timeStr= timeET.getText().toString();
-
                 myModel.calendarList.add(
-                        new CalendarModel.Calendar(timeStr));
+                        new CalendarModel.Calendar(studentStr, calendarStr, timeStr));
                 myAdapter.notifyItemChanged(myAdapter.getItemCount()-1);
                 studentET.setText("");
                 calendarET.setText("");

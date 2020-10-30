@@ -5,6 +5,7 @@ import androidx.core.view.GestureDetectorCompat;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.GestureDetector;
@@ -12,6 +13,7 @@ import android.view.MotionEvent;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Toast;
 
 public class ClassesPage extends AppCompatActivity {
     public static String KEY_COURSE = "KEY_COURSE";
@@ -72,14 +74,20 @@ public class ClassesPage extends AppCompatActivity {
         });
         Button addBTN = findViewById(R.id.addBTN);
         addBTN.setOnClickListener(new View.OnClickListener() {
+
             @Override
             public void onClick(View v) {
                 EditText classET = findViewById(R.id.classET);
                 String classStr = classET.getText().toString();
-                myModel.courseList.add(
-                        new ClassesModel.Classes(classStr));
-                myAdapter.notifyItemChanged(myAdapter.getItemCount()-1);
-                classET.setText("");
+                if(classStr.equals("")){
+                    Toast.makeText(getApplicationContext(),"Input Cannot Be Blank",Toast.LENGTH_SHORT).show();
+                }
+                else{
+                    myModel.courseList.add(
+                            new ClassesModel.Classes(classStr));
+                    myAdapter.notifyItemChanged(myAdapter.getItemCount()-1);
+                    classET.setText("");
+                }
             }
         });
     }
