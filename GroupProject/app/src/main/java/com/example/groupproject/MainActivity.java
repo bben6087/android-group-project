@@ -8,6 +8,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
     public static String KEY_NAME = "KEY_NAME";
@@ -24,10 +25,11 @@ public class MainActivity extends AppCompatActivity {
         EditText nameET = findViewById(R.id.nameET);
         EditText snumET = findViewById(R.id.snumET);
         String nameStr = nameET.getText().toString();
-        String snumStr = nameET.getText().toString();
-        if(nameStr == "" || snumStr == ""){
-            TextView loginET = findViewById(R.id.loginTV);
-            loginET.setText("Invalid username or s#.");
+        String snumStr = snumET.getText().toString();
+        if(nameStr.equals("") || snumStr.equals("")){
+            Toast.makeText(getApplicationContext(),"Input Cannot Be Blank",Toast.LENGTH_SHORT).show();
+            nameET.setText("");
+            snumET.setText("");
         }
         else{
             Intent otherIni = new Intent(this, ClassesPage.class);

@@ -10,6 +10,7 @@ import android.view.MotionEvent;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Toast;
 
 public class CalendarPage extends AppCompatActivity {
 
@@ -38,17 +39,21 @@ public class CalendarPage extends AppCompatActivity {
             public void onClick(View v) {
                 EditText studentET = findViewById(R.id.studentET);
                 String studentStr = studentET.getText().toString();
-                //Add more edit texts to update adapter and recycler view
                 EditText calendarET = findViewById(R.id.calendarET);
                 String calendarStr = calendarET.getText().toString();
                 EditText timeET = findViewById(R.id.timeET);
                 String timeStr= timeET.getText().toString();
-                myModel.calendarList.add(
-                        new CalendarModel.Calendar(studentStr, calendarStr, timeStr));
-                myAdapter.notifyItemChanged(myAdapter.getItemCount()-1);
-                studentET.setText("");
-                calendarET.setText("");
-                timeET.setText("");
+                if(studentStr.equals("") || calendarStr.equals("") || timeStr.equals("")){
+                    Toast.makeText(getApplicationContext(),"Input Cannot Be Blank",Toast.LENGTH_SHORT).show();
+                }
+                else{
+                    myModel.calendarList.add(
+                            new CalendarModel.Calendar(studentStr, calendarStr, timeStr));
+                    myAdapter.notifyItemChanged(myAdapter.getItemCount()-1);
+                    studentET.setText("");
+                    calendarET.setText("");
+                    timeET.setText("");
+                }
 
             }
         });
