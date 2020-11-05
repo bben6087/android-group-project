@@ -10,6 +10,9 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.parse.Parse;
+import com.parse.ParseInstallation;
+
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -20,6 +23,14 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        Parse.initialize(new Parse.Configuration.Builder(this)
+                        .applicationId(getString(R.string.back4app_app_id))
+                        // if defined
+                        .clientKey(getString(R.string.back4app_client_key))
+                        .server(getString(R.string.back4app_server_url))
+                        .build());
+        // Save the current Installation to Back4App
+        ParseInstallation.getCurrentInstallation().saveInBackground();
         setContentView(R.layout.activity_main);
     }
 
