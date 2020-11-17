@@ -73,9 +73,9 @@ public class MessengerPage extends AppCompatActivity {
                     public void done(List<ParseObject> messageString, ParseException e){
                         if (e==null){
                             Log.d("Parse" , "Message's Retrieved:" + messageString.size());
-                            for(int i = 0; i < messageString.size(); i++);
-                            System.out.println(messageString.get(i).get("messageString"));
-
+                            for(int i = 0; i < messageString.size(); i++) {
+                                System.out.println(messageString.get(i).get("messageString"));
+                            }
                         }
                         else{
                             Log.d("Parse", "Error: " + e.getMessage());
