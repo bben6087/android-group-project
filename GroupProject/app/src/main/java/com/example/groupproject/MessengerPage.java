@@ -55,14 +55,18 @@ public class MessengerPage extends AppCompatActivity {
                         new MessengerModel.Message(messageStr));
                 myAdapter.notifyItemChanged(myAdapter.getItemCount()-1);
                 messageET.setText("");
+                ParseObject message = new ParseObject("messageString");
+                message.put(messageStr);
+
             }
+
 
         }
     });
         messageBTN.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                
+
             }
         });
 }
