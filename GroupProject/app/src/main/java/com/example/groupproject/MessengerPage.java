@@ -39,6 +39,7 @@ public class MessengerPage extends AppCompatActivity {
     messageRV = findViewById(R.id.messageRV);
     messageRV.setAdapter(myAdapter);
 
+
     LinearLayoutManager lin = new LinearLayoutManager(this);
         messageRV.setLayoutManager(lin);
     Button sendBTN = findViewById(R.id.sendBTN);
@@ -64,25 +65,29 @@ public class MessengerPage extends AppCompatActivity {
 
 
         }
+
     });
         messageBTN.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 ParseQuery<ParseObject> query = ParseQuery.getQuery("MessageString");
                 query.findInBackground(new FindCallback<ParseObject>() {
-                    public void done(List<ParseObject> messageString, ParseException e){
-                        if (e==null){
-                            Log.d("Parse" , "Message's Retrieved:" + messageString.size());
-                            for(int i = 0; i < messageString.size(); i++) {
+                    @Override
+                    public void done(List<ParseObject> objects, com.parse.ParseException e) {
+
+                    }
+                    public void done(List<ParseObject> messageString, ParseException e) {
+                        if (e == null) {
+                            Log.d("Parse", "Message's Retrieved:" + messageString.size());
+                            for (int i = 0; i < messageString.size(); i++) {
                                 System.out.println(messageString.get(i).get("messageString"));
                             }
-                        }
-                        else{
+                        } else {
                             Log.d("Parse", "Error: " + e.getMessage());
                         }
                     }
                 });
             }
         });
-}
+    }
 }
