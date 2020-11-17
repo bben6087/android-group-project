@@ -8,19 +8,19 @@
     tools:context=".MainActivity">
 
     <TextView
-        android:id="@+id/snumLoginTV"
+        android:id="@+id/passLoginTV"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="S#:"
+        android:text="Password:"
         android:textColor="#FFFFFF"
         android:textSize="20sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.049"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/snumET"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.569" />
+        app:layout_constraintVertical_bias="0.565" />
 
     <TextView
         android:id="@+id/loginTV"
@@ -51,13 +51,13 @@
         app:layout_constraintVertical_bias="0.643" />
 
     <EditText
-        android:id="@+id/nameET"
+        android:id="@+id/snumET"
         android:layout_width="350dp"
         android:layout_height="wrap_content"
         android:background="@drawable/rounded_corner"
         android:backgroundTint="#FFFFFF"
         android:ems="10"
-        android:hint="LastName, FirstName"
+        android:hint="Example: s123456"
         android:inputType="textPersonName"
         android:padding="40px"
         android:textColor="#000000"
@@ -69,20 +69,20 @@
         app:layout_constraintVertical_bias="0.499" />
 
     <EditText
-        android:id="@+id/snumET"
+        android:id="@+id/passwordET"
         android:layout_width="350dp"
         android:layout_height="wrap_content"
         android:background="@drawable/rounded_corner"
         android:ems="10"
-        android:hint="Example: s123456"
+        android:hint="Password"
         android:inputType="textPersonName"
         android:padding="40px"
         android:textColor="#000000"
         app:layout_constraintBottom_toTopOf="@+id/loginBTN"
-        app:layout_constraintEnd_toEndOf="@+id/nameET"
+        app:layout_constraintEnd_toEndOf="@+id/snumET"
         app:layout_constraintHorizontal_bias="0.737"
-        app:layout_constraintStart_toStartOf="@+id/nameET"
-        app:layout_constraintTop_toBottomOf="@+id/nameET"
+        app:layout_constraintStart_toStartOf="@+id/snumET"
+        app:layout_constraintTop_toBottomOf="@+id/snumET"
         app:layout_constraintVertical_bias="0.409" />
 
     <ImageView
@@ -97,18 +97,28 @@
         app:srcCompat="@drawable/logo" />
 
     <TextView
-        android:id="@+id/nameLoginTV"
+        android:id="@+id/snumLoginTV"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Name:"
+        android:text="s#:"
         android:textColor="#FFFFFF"
         android:textSize="20sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.053"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/snumET"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.43" />
+        app:layout_constraintVertical_bias="0.429" />
+
+    <Button
+        android:id="@+id/createBTN"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Sign Up"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/loginBTN"
+        app:layout_constraintStart_toStartOf="@+id/loginBTN"
+        app:layout_constraintTop_toBottomOf="@+id/loginBTN" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

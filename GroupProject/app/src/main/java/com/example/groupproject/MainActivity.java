@@ -23,6 +23,7 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
         Parse.initialize(new Parse.Configuration.Builder(this)
                         .applicationId(getString(R.string.back4app_app_id))
                         // if defined
@@ -31,25 +32,19 @@ public class MainActivity extends AppCompatActivity {
                         .build());
         // Save the current Installation to Back4App
         ParseInstallation.getCurrentInstallation().saveInBackground();
-        setContentView(R.layout.activity_main);
     }
 
 
     public void goClassPage(View v) {
 
-        EditText nameET = findViewById(R.id.nameET);
         EditText snumET = findViewById(R.id.snumET);
-        String nameStr = nameET.getText().toString();
         String snumStr = snumET.getText().toString();
-        String[] nameParts = nameStr.split(",");
-        if (validateName(nameParts[0]) == false || validateName(nameParts[1]) == false || (nameStr.equals("") || snumStr.equals("")) || validateSNum(snumStr) == false) {
+        if (snumStr.equals("") || validateSNum(snumStr) == false) {
             Toast.makeText(getApplicationContext(), "Incorrect input please follow pattern in name and s# box", Toast.LENGTH_SHORT).show();
-            nameET.setText("");
             snumET.setText("");
         }
         else {
                 Intent otherIni = new Intent(this, ClassesPage.class);
-                otherIni.putExtra(KEY_NAME, nameStr);
                 otherIni.putExtra(KEY_SNUM, snumStr);
                 startActivity(otherIni);
 
