@@ -40,7 +40,7 @@ public class MainActivity extends AppCompatActivity {
         EditText snumET = findViewById(R.id.snumET);
         String snumStr = snumET.getText().toString();
         if (snumStr.equals("") || validateSNum(snumStr) == false) {
-            Toast.makeText(getApplicationContext(), "Incorrect input please follow pattern in name and s# box", Toast.LENGTH_SHORT).show();
+            Toast.makeText(getApplicationContext(), "Incorrect input please follow pattern in s# box", Toast.LENGTH_LONG).show();
             snumET.setText("");
         }
         else {
@@ -51,12 +51,6 @@ public class MainActivity extends AppCompatActivity {
                 Log.d("Navigation", "Started other activity");
         }
     }
-    public static boolean validateName (String txt) {
-        String regex = "^[\\p{L}\\s.’\\-,]+$";
-        Pattern pattern = Pattern.compile(regex, Pattern.CASE_INSENSITIVE);
-        Matcher matcher = pattern.matcher(txt);
-        return matcher.find();
-    }
 
     public static boolean validateSNum (String txt){
         for(char c: txt.toCharArray()){
@@ -65,6 +59,11 @@ public class MainActivity extends AppCompatActivity {
             }
         }
         return true;
+    }
+
+    public void goSignUp(View v){
+        Intent otherIni = new Intent(this, SignUp.class);
+        startActivity(otherIni);
     }
 
 }
