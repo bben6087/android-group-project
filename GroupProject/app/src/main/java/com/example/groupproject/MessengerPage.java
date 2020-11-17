@@ -12,7 +12,12 @@ import androidx.core.view.GestureDetectorCompat;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.parse.FindCallback;
+import com.parse.ParseObject;
+import com.parse.ParseQuery;
+
 import java.text.ParseException;
+import java.util.List;
 
 public class MessengerPage extends AppCompatActivity {
 
@@ -52,7 +57,8 @@ public class MessengerPage extends AppCompatActivity {
                 myAdapter.notifyItemChanged(myAdapter.getItemCount()-1);
                 messageET.setText("");
                 ParseObject message = new ParseObject("messageString");
-                message.put(messageStr);
+                ParseObject name = new ParseObject("nameMsg");
+                message.put(messageStr, name);
 
             }
 
@@ -63,12 +69,12 @@ public class MessengerPage extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 ParseQuery<ParseObject> query = ParseQuery.getQuery("MessageString");
-                query.findInBackground(new FindCallBack<ParseObject>() {
+                query.findInBackground(new FindCallback<ParseObject>() {
                     public void done(List<ParseObject> messageString, ParseException e){
                         if (e==null){
                             Log.d("Parse" , "Message's Retrieved:" + messageString.size());
                             for(int i = 0; i < messageString.size(); i++);
-                            System.out.println(messageString.get(i).get("title"));
+                            System.out.println(messageString.get(i).get("messageString"));
 
                         }
                         else{
