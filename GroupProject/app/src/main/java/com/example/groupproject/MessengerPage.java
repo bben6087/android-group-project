@@ -41,6 +41,7 @@ public class MessengerPage extends AppCompatActivity {
     LinearLayoutManager lin = new LinearLayoutManager(this);
         messageRV.setLayoutManager(lin);
     Button sendBTN = findViewById(R.id.sendBTN);
+    Button messageBTN = findViewById(R.id.messageBTN);
         sendBTN.setOnClickListener(new View.OnClickListener() {
         @Override
         public void onClick(View v) {
@@ -58,5 +59,11 @@ public class MessengerPage extends AppCompatActivity {
 
         }
     });
+        messageBTN.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                
+            }
+        });
 }
 }
