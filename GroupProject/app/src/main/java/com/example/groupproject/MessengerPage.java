@@ -1,23 +1,19 @@
 package com.example.groupproject;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.os.Bundle;
+import android.util.Log;
+import android.view.View;
+import android.widget.Button;
+import android.widget.EditText;
+import android.widget.Toast;
+
+import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.view.GestureDetectorCompat;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import android.content.Intent;
-import android.os.Bundle;
-import android.view.GestureDetector;
-import android.view.MotionEvent;
-import android.view.View;
-import android.widget.Button;
-import android.widget.EditText;
-import android.widget.TextView;
-import android.widget.Toast;
+import java.text.ParseException;
 
-import java.text.DecimalFormat;
 public class MessengerPage extends AppCompatActivity {
 
     public String message;
@@ -66,7 +62,20 @@ public class MessengerPage extends AppCompatActivity {
         messageBTN.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                ParseQuery<ParseObject> query = ParseQuery.getQuery("MessageString");
+                query.findInBackground(new FindCallBack<ParseObject>() {
+                    public void done(List<ParseObject> messageString, ParseException e){
+                        if (e==null){
+                            Log.d("Parse" , "Message's Retrieved:" + messageString.size());
+                            for(int i = 0; i < messageString.size(); i++);
+                            System.out.println(messageString.get(i).get("title"));
 
+                        }
+                        else{
+                            Log.d("Parse", "Error: " + e.getMessage());
+                        }
+                    }
+                });
             }
         });
 }
