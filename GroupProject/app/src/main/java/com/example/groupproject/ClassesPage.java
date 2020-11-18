@@ -57,10 +57,8 @@ public class ClassesPage extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_classes_page);
         snum = getIntent().getStringExtra(MainActivity.KEY_SNUM);
-        name = getIntent().getStringExtra(MainActivity.KEY_NAME);
-        String [] nameParts = name.split(",");
         TextView loginTitleTV = findViewById(R.id.loginTitleTV);
-        loginTitleTV.setText("Logged in as: " + nameParts[1] + " " + nameParts[0] + "\n S#: " + snum);
+        loginTitleTV.setText("Logged in as S#: " + snum);
 
 
         myModel= ClassesModel.getSingleton();
