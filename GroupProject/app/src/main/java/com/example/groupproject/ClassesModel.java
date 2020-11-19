@@ -1,6 +1,15 @@
 package com.example.groupproject;
 
+import android.util.Log;
+import android.widget.Toast;
+
+import com.parse.FindCallback;
+import com.parse.ParseException;
+import com.parse.ParseObject;
+import com.parse.ParseQuery;
+
 import java.util.ArrayList;
+import java.util.List;
 
 public class ClassesModel {
     public static ArrayList<Classes> courseList;
@@ -17,9 +26,11 @@ public class ClassesModel {
         }
     }
 
-    private ClassesModel(){
+    private ClassesModel() {
         courseList = new ArrayList<Classes>();
     }
+
+
 
     //loads objects into array
     private void loadItems(){
