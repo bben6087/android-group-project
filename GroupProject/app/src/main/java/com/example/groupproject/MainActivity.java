@@ -38,11 +38,7 @@ public class MainActivity extends AppCompatActivity {
                 .build());
         // Save the current Installation to Back4App
         ParseInstallation.getCurrentInstallation().saveInBackground();
-
-
-
     }
-
 
     public void goClassPage(View v) {
         EditText snumET = findViewById(R.id.snumET);
@@ -56,32 +52,34 @@ public class MainActivity extends AppCompatActivity {
             Toast.makeText(getApplicationContext(), "Input Cannot Be Blank.", Toast.LENGTH_SHORT).show();
         }
         else {
-            ParseQuery<ParseObject> query = ParseQuery.getQuery("Login");
-            Log.d("Click", "You have clicked");
-            query.findInBackground(new FindCallback<ParseObject>() {
-                @Override
-                public void done(List<ParseObject> objects, ParseException e) {
-                    lastSearch.clear();
-                    lastSearch.addAll(objects);
-                    String toShow = "";
-                    if (e == null) {
-                        //success
-                        for (int i = 0; i < objects.size(); i++) {
-                            ParseObject user = objects.get(i);
-                            if (user.get("username").equals(snumStr) && user.get("password").equals(passwordStr)) {
-                                Toast.makeText(getApplicationContext(), "Login Successful :)", Toast.LENGTH_SHORT).show();
-                                goClasses();
-                            }
-                            else {
-                                Toast.makeText(getApplicationContext(), "Incorrect S# and Password.", Toast.LENGTH_SHORT).show();
-                                Log.d("Error", ": Not Loading Parse");
-                            }
+                ParseQuery<ParseObject> query = ParseQuery.getQuery("Login");
+                Log.d("Click", "You have clicked");
+                query.whereMatches("username", snumStr);
+                query.findInBackground(new FindCallback<ParseObject>() {
+                    @Override
+                    public void done(List<ParseObject> objects, ParseException e) {
+                        if(objects.size()==0){
+                            Toast.makeText(getApplicationContext(), "Incorrect S# and Password.", Toast.LENGTH_SHORT).show();
                         }
+                        lastSearch.clear();
+                        lastSearch.addAll(objects);
+                        String toShow = "";
+                        if (e == null) {
+                            //success
+                            for (int i = 0; i < objects.size(); i++) {
+                                ParseObject user = objects.get(i);
+                                if (user.get("username").equals(snumStr) && user.get("password").equals(passwordStr)) {
+                                    Toast.makeText(getApplicationContext(), "Login Successful :)", Toast.LENGTH_SHORT).show();
+                                    goClasses();
+                                    break;
+                                }
+                            }
 
+                        }
                     }
-                }
-            });
+                });
         }
+
     }
 
 
