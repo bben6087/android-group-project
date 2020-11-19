@@ -59,7 +59,7 @@ public class MainActivity extends AppCompatActivity {
                     @Override
                     public void done(List<ParseObject> objects, ParseException e) {
                         if(objects.size()==0){
-                            Toast.makeText(getApplicationContext(), "Incorrect S# and Password.", Toast.LENGTH_SHORT).show();
+                            Toast.makeText(getApplicationContext(), "Incorrect S# or Password.", Toast.LENGTH_SHORT).show();
                         }
                         lastSearch.clear();
                         lastSearch.addAll(objects);
@@ -71,6 +71,10 @@ public class MainActivity extends AppCompatActivity {
                                 if (user.get("username").equals(snumStr) && user.get("password").equals(passwordStr)) {
                                     Toast.makeText(getApplicationContext(), "Login Successful :)", Toast.LENGTH_SHORT).show();
                                     goClasses();
+                                    break;
+                                }
+                                else{
+                                    Toast.makeText(getApplicationContext(), "Incorrect S# or Password.", Toast.LENGTH_SHORT).show();
                                     break;
                                 }
                             }
