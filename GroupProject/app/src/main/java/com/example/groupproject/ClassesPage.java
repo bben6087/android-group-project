@@ -151,4 +151,8 @@ public class ClassesPage extends AppCompatActivity {
         startActivity(calender);
     }
 
+    public static String getSnum(View v){
+        return snum;
+    }
+
     }

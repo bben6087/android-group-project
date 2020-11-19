@@ -27,7 +27,7 @@
         android:ems="10"
         android:hint="Student Name"
         android:inputType="textPersonName"
-        app:layout_constraintBottom_toTopOf="@+id/calendarET"
+        app:layout_constraintBottom_toTopOf="@+id/courseNameET"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
@@ -44,9 +44,9 @@
         android:hint="Time"
         android:inputType="textPersonName"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="@+id/calendarET"
+        app:layout_constraintEnd_toEndOf="@+id/courseNameET"
         app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="@+id/calendarET"
+        app:layout_constraintStart_toStartOf="@+id/courseNameET"
         app:layout_constraintTop_toBottomOf="@+id/calendarView"
         app:layout_constraintVertical_bias="1.0" />
 
@@ -76,7 +76,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
-        android:id="@+id/calendarET"
+        android:id="@+id/courseNameET"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="4dp"
