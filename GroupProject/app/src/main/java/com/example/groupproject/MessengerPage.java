@@ -49,6 +49,8 @@ public class MessengerPage extends AppCompatActivity {
         public void onClick(View v) {
             EditText messageET = findViewById(R.id.messageET);
             String messageStr= messageET.getText().toString();
+            EditText nameET = findViewById(R.id.nameET);
+            String nameStr= nameET.getText().toString();
             if(messageStr.equals("")){
                 Toast.makeText(getApplicationContext(),"Input Cannot Be Blank",Toast.LENGTH_SHORT).show();
             }
@@ -60,6 +62,7 @@ public class MessengerPage extends AppCompatActivity {
                 ParseObject message = new ParseObject("messageString");
                 ParseObject name = new ParseObject("nameMsg");
                 message.put(messageStr, name);
+
 
             }
 
