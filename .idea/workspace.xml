@@ -40,6 +40,7 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Class" />
+        <option value="resourceFile" />
       </list>
     </option>
   </component>
@@ -66,8 +67,9 @@
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\Users\s525535\Documents\GitHub\android-group-project\GroupProject\app\src\main\res\mipmap-hdpi" />
+      <recent name="C:\Users\s525535\Documents\GitHub\android-group-project\GroupProject\app\src\main\res\drawable" />
       <recent name="C:\Users\s525535\Documents\GitHub\android-group-project\GroupProject\app\src\main\res\drawable-v24" />
+      <recent name="C:\Users\s525535\Documents\GitHub\android-group-project\GroupProject\app\src\main\res\mipmap-hdpi" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\s525535\Documents\GitHub\android-group-project\GroupProject\app\src\main\res\drawable" />
@@ -189,26 +191,30 @@
       <screen x="0" y="0" width="1280" height="680" />
     </state>
     <state x="490" y="230" key="#com.intellij.ide.util.projectWizard.JdkChooserPanel.MyDialog/0.0.1280.680@0.0.1280.680" timestamp="1603742955807" />
+    <state x="221" y="95" key="AndroidCreateResourceFileDialog" timestamp="1605828093932">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state x="221" y="95" key="AndroidCreateResourceFileDialog/0.0.1280.680@0.0.1280.680" timestamp="1605828093932" />
     <state x="421" y="96" key="FileChooserDialogImpl" timestamp="1604934051863">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
     <state x="421" y="96" key="FileChooserDialogImpl/0.0.1280.680@0.0.1280.680" timestamp="1604934051863" />
-    <state width="1236" height="163" key="GridCell.Tab.0.bottom" timestamp="1605827246446">
+    <state width="1236" height="163" key="GridCell.Tab.0.bottom" timestamp="1605828527637">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="1236" height="163" key="GridCell.Tab.0.bottom/0.0.1280.680@0.0.1280.680" timestamp="1605827246446" />
-    <state width="1236" height="163" key="GridCell.Tab.0.center" timestamp="1605827246446">
+    <state width="1236" height="163" key="GridCell.Tab.0.bottom/0.0.1280.680@0.0.1280.680" timestamp="1605828527637" />
+    <state width="1236" height="163" key="GridCell.Tab.0.center" timestamp="1605828527636">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="1236" height="163" key="GridCell.Tab.0.center/0.0.1280.680@0.0.1280.680" timestamp="1605827246446" />
-    <state width="1236" height="163" key="GridCell.Tab.0.left" timestamp="1605827246446">
+    <state width="1236" height="163" key="GridCell.Tab.0.center/0.0.1280.680@0.0.1280.680" timestamp="1605828527636" />
+    <state width="1236" height="163" key="GridCell.Tab.0.left" timestamp="1605828527636">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="1236" height="163" key="GridCell.Tab.0.left/0.0.1280.680@0.0.1280.680" timestamp="1605827246446" />
-    <state width="1236" height="163" key="GridCell.Tab.0.right" timestamp="1605827246446">
+    <state width="1236" height="163" key="GridCell.Tab.0.left/0.0.1280.680@0.0.1280.680" timestamp="1605828527636" />
+    <state width="1236" height="163" key="GridCell.Tab.0.right" timestamp="1605828527636">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="1236" height="163" key="GridCell.Tab.0.right/0.0.1280.680@0.0.1280.680" timestamp="1605827246446" />
+    <state width="1236" height="163" key="GridCell.Tab.0.right/0.0.1280.680@0.0.1280.680" timestamp="1605828527636" />
     <state x="142" y="0" key="SettingsEditor" timestamp="1603749128966">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
