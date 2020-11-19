@@ -21,25 +21,29 @@
         android:id="@+id/messageET"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="160dp"
-        android:layout_marginEnd="20dp"
+        android:layout_marginTop="148dp"
         android:background="@drawable/rounded_corner"
         android:ems="10"
         android:hint="Enter message here"
         android:inputType="textPersonName"
         app:layout_constraintEnd_toStartOf="@+id/sendBTN"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/messageRV" />
 
     <Button
         android:id="@+id/sendBTN"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="260dp"
+        android:layout_marginEnd="40dp"
         android:background="@drawable/rounded_corner"
         android:text="Send"
-        app:layout_constraintBottom_toBottomOf="@+id/messageET"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/messageET" />
+        app:layout_constraintBottom_toTopOf="@+id/messageBTN"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toEndOf="@+id/messageET"
+        app:layout_constraintTop_toBottomOf="@+id/messageRV"
+        app:layout_constraintVertical_bias="0.896" />
 
     <TextView
         android:id="@+id/messageTitleTV"
@@ -59,28 +63,30 @@
         android:id="@+id/messageBTN"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:background="@drawable/rounded_corner"
         android:text="Grab Messages"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.804"
+        app:layout_constraintHorizontal_bias="0.949"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/messageET"
-        app:layout_constraintVertical_bias="0.4" />
+        app:layout_constraintVertical_bias="0.0" />
 
     <EditText
         android:id="@+id/nameET"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="210dp"
+        android:layout_height="37dp"
         android:background="@drawable/rounded_corner"
         android:drawableStart="@drawable/rounded_corner"
         android:drawableTint="#FFFFFF"
         android:ems="10"
         android:hint="Enter name"
         android:inputType="textPersonName"
-        app:layout_constraintBottom_toTopOf="@+id/sendBTN"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.134"
+        app:layout_constraintEnd_toStartOf="@+id/sendBTN"
+        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/messageRV"
-        app:layout_constraintVertical_bias="1.0" />
+        app:layout_constraintVertical_bias="0.436" />
 </androidx.constraintlayout.widget.ConstraintLayout>
