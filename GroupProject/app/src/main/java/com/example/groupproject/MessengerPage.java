@@ -13,10 +13,11 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.parse.FindCallback;
+import com.parse.ParseException;
 import com.parse.ParseObject;
 import com.parse.ParseQuery;
+import com.parse.SaveCallback;
 
-import java.text.ParseException;
 import java.util.List;
 
 public class MessengerPage extends AppCompatActivity {
@@ -33,64 +34,66 @@ public class MessengerPage extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_messenger_page);
 
-    myModel= MessengerModel.getSingleton();
-    myAdapter = new MessengerAdapter();
+        myModel= MessengerModel.getSingleton();
+        myAdapter = new MessengerAdapter();
 
-    messageRV = findViewById(R.id.messageRV);
-    messageRV.setAdapter(myAdapter);
+        messageRV = findViewById(R.id.messageRV);
+        messageRV.setAdapter(myAdapter);
 
 
-    LinearLayoutManager lin = new LinearLayoutManager(this);
+        LinearLayoutManager lin = new LinearLayoutManager(this);
         messageRV.setLayoutManager(lin);
-    Button sendBTN = findViewById(R.id.sendBTN);
-    Button messageBTN = findViewById(R.id.messageBTN);
-        sendBTN.setOnClickListener(new View.OnClickListener() {
-        @Override
-        public void onClick(View v) {
-            EditText messageET = findViewById(R.id.messageET);
-            String messageStr= messageET.getText().toString();
-            EditText nameET = findViewById(R.id.nameET);
-            String nameStr= nameET.getText().toString();
-            if(messageStr.equals("")){
-                Toast.makeText(getApplicationContext(),"Input Cannot Be Blank",Toast.LENGTH_SHORT).show();
-            }
-            else{
-                myModel.messages.add(
-                        new MessengerModel.Message(messageStr));
-                myAdapter.notifyItemChanged(myAdapter.getItemCount()-1);
-                messageET.setText("");
-                ParseObject message = new ParseObject("messageString");
-                ParseObject name = new ParseObject("nameMsg");
-                message.put(messageStr, name);
 
+        myModel.messages.clear();
 
-            }
-
-
-        }
-
-    });
-        messageBTN.setOnClickListener(new View.OnClickListener() {
+        ParseQuery<ParseObject> query = ParseQuery.getQuery("Message");
+        query.whereMatches("username", ClassesPage.getSnum());
+        query.findInBackground(new FindCallback<ParseObject>() {
             @Override
-            public void onClick(View view) {
-                ParseQuery<ParseObject> query = ParseQuery.getQuery("MessageString");
-                query.findInBackground(new FindCallback<ParseObject>() {
-                    @Override
-                    public void done(List<ParseObject> objects, com.parse.ParseException e) {
+            public void done(List<ParseObject> objects, com.parse.ParseException e) {
+                if (e == null) {
+                    Log.d("Parse", "Message's Retrieved:" + objects.size());
+                    for (int i = 0; i < objects.size(); i++) {
+                        ParseObject message = objects.get(i);
+                        myModel.messages.add(
+                                new MessengerModel.Message(message.getString("message")));
+                        myAdapter.notifyItemChanged(myAdapter.getItemCount() - 1);
+                    }
+                } else {
+                    Log.d("Parse", "Error: " + e.getMessage());
+                }
 
-                    }
-                    public void done(List<ParseObject> messageString, ParseException e) {
-                        if (e == null) {
-                            Log.d("Parse", "Message's Retrieved:" + messageString.size());
-                            for (int i = 0; i < messageString.size(); i++) {
-                                System.out.println(messageString.get(i).get("messageString"));
-                            }
-                        } else {
-                            Log.d("Parse", "Error: " + e.getMessage());
-                        }
-                    }
-                });
+
             }
+        });
+
+        Button sendBTN = findViewById(R.id.sendBTN);
+        sendBTN.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                EditText messageET = findViewById(R.id.messageET);
+                String messageStr= messageET.getText().toString();
+                if(messageStr.equals("")){
+                    Toast.makeText(getApplicationContext(),"Input Cannot Be Blank",Toast.LENGTH_SHORT).show();
+                }
+                else{
+                    myModel.messages.add(
+                            new MessengerModel.Message(messageStr));
+                    myAdapter.notifyItemChanged(myAdapter.getItemCount()-1);
+                    messageET.setText("");
+                    ParseObject message = new ParseObject("Message");
+                    message.put("message",messageStr);
+                    message.put("username", ClassesPage.getSnum());
+                    message.saveInBackground(new SaveCallback() {
+                        @Override
+                        public void done(ParseException e) {
+                            Log.d("Parse", "Reg: " + e);
+                        }
+                    });
+                }
+            }
+
         });
     }
 }
+
