@@ -6,18 +6,27 @@ public class CalendarModel {
     public static ArrayList<Calendar> calendarList;
 
     public String getPosition(int position) {
-        return CalendarModel.calendarList.get(position).calendar;
+        return CalendarModel.calendarList.get(position).course;
     }
 
-    public static class Calendar{
-        public String calendar;
-        public String time;
-        public String name;
+    public String getTime(int position) {
+        return CalendarModel.calendarList.get(position).time;
+    }
 
-        public Calendar(String name, String calendar, String time) {
-            this.calendar = calendar;
+    public String getDate(int position){
+        return CalendarModel.calendarList.get(position).date;
+    }
+
+
+    public static class Calendar{
+        public String date;
+        public String time;
+        public String course;
+
+        public Calendar(String course, String date, String time) {
+            this.date = date;
             this.time = time;
-            this.name = name;
+            this.course = course;
         }
     }
 
@@ -27,7 +36,7 @@ public class CalendarModel {
 
     //loads objects into array
     private void loadItems(){
-        calendarList.add(new Calendar("Steve", "Course", "12 Monday"));
+        calendarList.add(new Calendar("course", "date", "12"));
 
     }
     // Creates the model
