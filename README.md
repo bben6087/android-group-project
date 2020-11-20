@@ -41,7 +41,7 @@ Messaging - It would be difficult to create because we are unsure how to and it 
 
 ## Sources 
 - https://stackoverflow.com/ ( We have used Stack Overflow to answer questions about errors.)
-- Dr. Hoots Notes (We have used these as a reference for many of our used function like the recycler view.)
+- Dr. Hoots Notes (We have used these as a reference for many of our used functions like the recycler view.)
 - https://www.back4app.com/ (We are using Back4App as our database.)
 - https://www.back4app.com/docs/android/parse-android-sdk (How to install Parse SDK documentation.)
 - https://www.back4app.com/docs/android/parse-objects/crud (How to add and get data to manipulate the database documentation.)
