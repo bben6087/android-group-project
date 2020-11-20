@@ -16,8 +16,8 @@ public class CoursePage extends AppCompatActivity {
         setContentView(R.layout.activity_course_page);
 
         courseName = getIntent().getStringExtra(ClassesPage.KEY_COURSE);
-        TextView courseTV = findViewById(R.id.courseTV);
-        courseTV.setText(courseName);
+        TextView courseNameTV = findViewById(R.id.courseTV);
+        courseNameTV.setText(courseName);
     }
 
     public void goCally(View v){
