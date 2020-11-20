@@ -5,16 +5,16 @@
     android:layout_height="wrap_content">
 
     <TextView
-        android:id="@+id/studentTV"
-        android:layout_width="125dp"
+        android:id="@+id/courseTV"
+        android:layout_width="97dp"
         android:layout_height="53dp"
         android:text="TextView"
         android:textColor="#FFFFFF"
         android:textStyle="bold" />
 
     <TextView
-        android:id="@+id/calendarTV"
-        android:layout_width="112dp"
+        android:id="@+id/dateTV"
+        android:layout_width="14dp"
         android:layout_height="match_parent"
         android:layout_weight="1"
         android:text="TextView"
@@ -23,7 +23,7 @@
 
     <TextView
         android:id="@+id/timeTV"
-        android:layout_width="92dp"
+        android:layout_width="29dp"
         android:layout_height="match_parent"
         android:layout_weight="1"
         android:text="TextView"

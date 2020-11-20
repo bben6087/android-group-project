@@ -10,45 +10,41 @@
         android:id="@+id/calendarView"
         android:layout_width="320dp"
         android:layout_height="296dp"
-        android:layout_marginTop="200dp"
-        android:background="@drawable/rounded_corner"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toEndOf="@+id/calendarRV"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:background="#AAAAAAAA"
+        app:layout_constraintBottom_toTopOf="@+id/courseNameeeET"
+        app:layout_constraintEnd_toEndOf="@+id/calendarRV"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="@+id/calendarRV"
+        app:layout_constraintTop_toBottomOf="@+id/calendarRV"
+        app:layout_constraintVertical_bias="0.0" />
 
     <EditText
-        android:id="@+id/studentET"
+        android:id="@+id/courseNameeeET"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
+        android:layout_marginBottom="4dp"
         android:background="@drawable/rounded_corner"
         android:ems="10"
-        android:hint="Student Name"
+        android:hint="Example: Math"
         android:inputType="textPersonName"
-        app:layout_constraintBottom_toTopOf="@+id/courseNameET"
+        app:layout_constraintBottom_toTopOf="@+id/dateET"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/calendarView"
-        app:layout_constraintVertical_bias="1.0" />
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent" />
 
     <EditText
         android:id="@+id/timeET"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="68dp"
+        android:layout_marginBottom="4dp"
         android:background="@drawable/rounded_corner"
         android:ems="10"
-        android:hint="Time"
+        android:hint="Example: 6:00"
         android:inputType="textPersonName"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="@+id/courseNameET"
+        app:layout_constraintBottom_toTopOf="@+id/addBTN"
+        app:layout_constraintEnd_toEndOf="@+id/dateET"
         app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="@+id/courseNameET"
-        app:layout_constraintTop_toBottomOf="@+id/calendarView"
-        app:layout_constraintVertical_bias="1.0" />
+        app:layout_constraintStart_toStartOf="@+id/dateET" />
 
     <Button
         android:id="@+id/addBTN"
@@ -59,9 +55,7 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="@+id/timeET"
         app:layout_constraintHorizontal_bias="0.498"
-        app:layout_constraintStart_toStartOf="@+id/timeET"
-        app:layout_constraintTop_toBottomOf="@+id/timeET"
-        app:layout_constraintVertical_bias="0.644" />
+        app:layout_constraintStart_toStartOf="@+id/timeET" />
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/calendarRV"
@@ -76,20 +70,18 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
-        android:id="@+id/courseNameET"
+        android:id="@+id/dateET"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="4dp"
+        android:layout_marginBottom="8dp"
         android:background="@drawable/rounded_corner"
         android:ems="10"
-        android:hint="Course Name"
+        android:hint="Example: 11/10/2020"
         android:inputType="textPersonName"
         app:layout_constraintBottom_toTopOf="@+id/timeET"
-        app:layout_constraintEnd_toEndOf="@+id/studentET"
+        app:layout_constraintEnd_toEndOf="@+id/courseNameeeET"
         app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="@+id/studentET"
-        app:layout_constraintTop_toBottomOf="@+id/calendarView"
-        app:layout_constraintVertical_bias="1.0" />
+        app:layout_constraintStart_toStartOf="@+id/courseNameeeET" />
 
     <TextView
         android:id="@+id/textView"
@@ -121,5 +113,43 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.0"
         app:srcCompat="@drawable/calendar" />
+
+    <TextView
+        android:id="@+id/courseDisplayTV"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Course:"
+        android:textColor="#FFFFFF"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@+id/courseNameeeET"
+        app:layout_constraintEnd_toStartOf="@+id/courseNameeeET"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/snumET"
+        app:layout_constraintTop_toTopOf="@+id/courseNameeeET" />
+
+    <TextView
+        android:id="@+id/timeDisTV"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Time:"
+        android:textColor="#FFFFFF"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@+id/timeET"
+        app:layout_constraintEnd_toStartOf="@+id/timeET"
+        app:layout_constraintTop_toTopOf="@+id/timeET" />
+
+    <TextView
+        android:id="@+id/dateDisTV"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Date:"
+        android:textColor="#FFFFFF"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@+id/dateET"
+        app:layout_constraintEnd_toStartOf="@+id/dateET"
+        app:layout_constraintTop_toTopOf="@+id/dateET" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
