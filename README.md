@@ -10,7 +10,7 @@
 
 ## Describe the problem/issue your app is going to address.
 
-Getting a study group together with your classmates that share classes with you
+With this app we hope to provide students a way to set up study sessions with fellow classmates, aslo provide them a way to see other students in the same class as them, hopfully it would encourage more students to group study and inturn learn the subject better.
 
 
 
@@ -26,12 +26,11 @@ Messaging: users can message other students in thier calss in order to set up st
 
 An Events page showing the (Time-Date_Location_Description) this will aslo be where students schedule study sessions with other students 
 
-And the ability to display what classes you are in to other students in those classes
-
+And the calender page will display what clases you are in as well as letting others to see what classes you are in.
 
 ## Risky Components 
 
-
+Database - there is some diffficulty with the amount of data we have to handel
 
 Calendar - We are unsure on how to implent this yet 
 
