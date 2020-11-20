@@ -30,7 +30,7 @@ And the calender page will display what clases you are in as well as letting oth
 
 ## Risky Components 
 
-Database - there is some diffficulty with the amount of data we have to handel
+Database - there is some diffficulty with the amount of data we have to handle
 
 Calendar - We are unsure on how to implent this yet 
 
