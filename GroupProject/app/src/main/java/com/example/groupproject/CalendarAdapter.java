@@ -36,10 +36,10 @@ public class CalendarAdapter extends RecyclerView.Adapter<CalendarAdapter.Calend
     //Puts the Array on the recycler view
     @Override
     public void onBindViewHolder(@NonNull CalendarViewHolder holder, int position) {
-        TextView studentTV = holder.itemView.findViewById(R.id.studentTV);
-        studentTV.setText(theModel.calendarList.get(position).name);
-        TextView calendarTV = holder.itemView.findViewById(R.id.calendarTV);
-        calendarTV.setText(theModel.calendarList.get(position).calendar);
+        TextView courseTV = holder.itemView.findViewById(R.id.courseTV);
+        courseTV.setText(theModel.calendarList.get(position).course);
+        TextView dateTV = holder.itemView.findViewById(R.id.dateTV);
+        dateTV.setText(theModel.calendarList.get(position).date);
         TextView timeTV = holder.itemView.findViewById(R.id.timeTV);
         timeTV.setText(theModel.calendarList.get(position).time);
 
