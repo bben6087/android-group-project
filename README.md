@@ -1,13 +1,17 @@
 # android-group-project
 
+## Contributors
+- Blake Bennett: https://github.com/bben6087
+- Nolan Harless: https://github.com/NolanHarless
+- Vinny Sorrentino: https://github.com/VinnySorrentino
+
+
 ## StudySesh
 - This is the name of our android app
 
+
 ## Supported Devices
 - Any android device using (API 23: Android 6.0 Marshmellow) and above.
-
-
-
 
 
 ## Describe the problem/issue your app is going to address.
@@ -15,20 +19,13 @@
 With this app we hope to provide students a way to set up study sessions with fellow classmates, aslo provide them a way to see other students in the same class as them, hopfully it would encourage more students to group study and inturn learn the subject better.
 
 
-
-
-
-
 ## The app will have
-
-
-
-
 Messaging: users can message other students in thier calss in order to set up study sessions 
 
 An Events page showing the (Time-Date_Location_Description) this will aslo be where students schedule study sessions with other students 
 
 And the calender page will display what clases you are in as well as letting others to see what classes you are in.
+
 
 ## Risky Components 
 
