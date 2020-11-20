@@ -1,6 +1,7 @@
 # android-group-project
 
 ## StudySesh
+- This is the name of our android app
 
 ## Supported Devices
 - Any android device using (API 23: Android 6.0 Marshmellow) and above.
