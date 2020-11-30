@@ -9,15 +9,20 @@ import android.view.View;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import com.parse.FindCallback;
 import com.parse.Parse;
 import com.parse.ParseException;
 import com.parse.ParseInstallation;
 import com.parse.ParseObject;
-import com.parse.ParseUser;
+import com.parse.ParseQuery;
 import com.parse.SaveCallback;
-import com.parse.SignUpCallback;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class SignUp extends AppCompatActivity {
+    final List<ParseObject> lastSearch = new ArrayList<ParseObject>();
+    private boolean canCreate;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -36,23 +41,55 @@ public class SignUp extends AppCompatActivity {
 
     }
 
-    public void createAccount(View v) {
+    public void createAccount(final View v) {
         EditText snumET = findViewById(R.id.createSNumET);
-        String snumStr = snumET.getText().toString();
+        final String snumStr = snumET.getText().toString();
         EditText passwordET = findViewById(R.id.createPasswordET);
         String passStr = passwordET.getText().toString();
         if (validateSNum(snumStr) == true && !snumStr.equals("") && !passStr.equals("")) {
-            ParseObject login = new ParseObject("Login");
-            login.put("username", snumStr);
-            login.put("password", passStr);
-            login.saveInBackground(new SaveCallback() {
+            ParseQuery<ParseObject> query = ParseQuery.getQuery("Login");
+            Log.d("Click", "You have clicked");
+            query.findInBackground(new FindCallback<ParseObject>() {
                 @Override
-                public void done(ParseException e) {
-                    Log.d("Parse", "Reg: " + e);
-                    Toast.makeText(getApplicationContext(), "You have Successfully created an Account!", Toast.LENGTH_LONG).show();
+                public void done(List<ParseObject> objects, ParseException e) {
+                    lastSearch.clear();
+                    lastSearch.addAll(objects);
+                    if (e == null) {
+                        //success
+                        for (int i = 0; i < objects.size(); i++) {
+                            ParseObject user = objects.get(i);
+                            if (user.get("username").equals(snumStr)) {
+                                Toast.makeText(getApplicationContext(), "S# already taken. Try picking a different one.", Toast.LENGTH_LONG).show();
+                                canCreate = false;
+                                break;
+                            }
+                            else{
+                                canCreate = true;
+                            }
+                        }
+                        if(canCreate==true){
+                            EditText snumET = findViewById(R.id.createSNumET);
+                            String snumStr = snumET.getText().toString();
+                            EditText passwordET = findViewById(R.id.createPasswordET);
+                            String passStr = passwordET.getText().toString();
+                            ParseObject login = new ParseObject("Login");
+                            login.put("username", snumStr);
+                            login.put("password", passStr);
+                            login.saveInBackground(new SaveCallback() {
+                                @Override
+                                public void done(ParseException e) {
+                                    Log.d("Parse", "Reg: " + e);
+                                    Toast.makeText(getApplicationContext(), "You have Successfully created an Account!", Toast.LENGTH_LONG).show();
+                                }
+                            });
+                            goToHomePage(v);
+                        }
+
+                    }
+
                 }
             });
-            goToHomePage(v);
+
         }
         else if(validateSNum(snumStr) == false){
             Toast.makeText(getApplicationContext(), "Incorrect input please follow pattern in s# box.", Toast.LENGTH_LONG).show();
