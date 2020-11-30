@@ -26,6 +26,7 @@ import java.util.regex.Pattern;
 public class MainActivity extends AppCompatActivity {
     public static String KEY_SNUM = "KEY_SNUM";
     final List<ParseObject> lastSearch = new ArrayList<ParseObject>();
+    private boolean isUserPass;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -54,13 +55,9 @@ public class MainActivity extends AppCompatActivity {
         else {
                 ParseQuery<ParseObject> query = ParseQuery.getQuery("Login");
                 Log.d("Click", "You have clicked");
-                query.whereMatches("username", snumStr);
                 query.findInBackground(new FindCallback<ParseObject>() {
                     @Override
                     public void done(List<ParseObject> objects, ParseException e) {
-                        if(objects.size()==0){
-                            Toast.makeText(getApplicationContext(), "Incorrect S# or Password.", Toast.LENGTH_SHORT).show();
-                        }
                         lastSearch.clear();
                         lastSearch.addAll(objects);
                         String toShow = "";
@@ -69,14 +66,18 @@ public class MainActivity extends AppCompatActivity {
                             for (int i = 0; i < objects.size(); i++) {
                                 ParseObject user = objects.get(i);
                                 if (user.get("username").equals(snumStr) && user.get("password").equals(passwordStr)) {
-                                    Toast.makeText(getApplicationContext(), "Login Successful :)", Toast.LENGTH_SHORT).show();
-                                    goClasses();
+                                    isUserPass = true;
+                                    isUser(isUserPass);
                                     break;
                                 }
                                 else{
-                                    Toast.makeText(getApplicationContext(), "Incorrect S# or Password.", Toast.LENGTH_SHORT).show();
-                                    break;
+                                    isUserPass = false;
                                 }
+
+                            }
+                            if(isUserPass == false){
+                                Toast.makeText(getApplicationContext(), "Incorrect S# or Password.", Toast.LENGTH_SHORT).show();
+
                             }
 
                         }
@@ -106,6 +107,15 @@ public class MainActivity extends AppCompatActivity {
     public void goSignUp(View v) {
         Intent otherIni = new Intent(this, SignUp.class);
         startActivity(otherIni);
+    }
+
+    public void isUser(boolean isUserPass){
+        if(isUserPass == true){
+            Toast.makeText(getApplicationContext(), "Login Successful :)", Toast.LENGTH_SHORT).show();
+            goClasses();
+        }
+        else if(isUserPass == false){
+        }
     }
 
 }
