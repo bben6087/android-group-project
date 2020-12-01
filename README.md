@@ -9,7 +9,7 @@
 ## StudySesh
 - This is the name of our android app
 
-## StudySheh Test user and password 
+## StudySesh Test user and password 
 - User: s123456
 - Password: Pass123
 
