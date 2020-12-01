@@ -9,6 +9,10 @@
 ## StudySesh
 - This is the name of our android app
 
+## StudySheh Test user and password 
+- User: s123456
+- Password: Pass123
+
 ## Instructions for Building and Running
 1. Clone or fork the repo down to your local machine
 2. Open up android studio and access the file you cloned locally
