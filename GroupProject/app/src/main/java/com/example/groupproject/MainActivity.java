@@ -27,6 +27,7 @@ public class MainActivity extends AppCompatActivity {
     public static String KEY_SNUM = "KEY_SNUM";
     final List<ParseObject> lastSearch = new ArrayList<ParseObject>();
     private boolean isUserPass;
+    public static boolean sval;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -46,10 +47,7 @@ public class MainActivity extends AppCompatActivity {
         final String snumStr = snumET.getText().toString();
         EditText passwordET = findViewById(R.id.passwordET);
         final String passwordStr = passwordET.getText().toString();
-        if (validateSNum(snumStr) == false) {
-            Toast.makeText(getApplicationContext(), "Incorrect input please follow pattern in s# box.", Toast.LENGTH_SHORT).show();
-        }
-        else if (snumStr.equals("") || passwordStr.equals("")) {
+        if (snumStr.equals("") || passwordStr.equals("")) {
             Toast.makeText(getApplicationContext(), "Input Cannot Be Blank.", Toast.LENGTH_SHORT).show();
         }
         else {
@@ -95,14 +93,7 @@ public class MainActivity extends AppCompatActivity {
         otherIni.putExtra(KEY_SNUM, snumStr);
         startActivity(otherIni);
     }
-    public static boolean validateSNum(String txt) {
-        for (char c : txt.toCharArray()) {
-            if ((Character.isDigit(c) || c == 's')) {
-                return true;
-            }
-        }
-        return false;
-    }
+
 
     public void goSignUp(View v) {
         Intent otherIni = new Intent(this, SignUp.class);
