@@ -23,6 +23,7 @@ import java.util.List;
 public class SignUp extends AppCompatActivity {
     final List<ParseObject> lastSearch = new ArrayList<ParseObject>();
     private boolean canCreate;
+    public static boolean sval;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -46,7 +47,8 @@ public class SignUp extends AppCompatActivity {
         final String snumStr = snumET.getText().toString();
         EditText passwordET = findViewById(R.id.createPasswordET);
         String passStr = passwordET.getText().toString();
-        if (validateSNum(snumStr) == true && !snumStr.equals("") && !passStr.equals("")) {
+        validateSNum(snumStr);
+        if (sval == true && !snumStr.equals("") && !passStr.equals("")) {
             ParseQuery<ParseObject> query = ParseQuery.getQuery("Login");
             Log.d("Click", "You have clicked");
             query.findInBackground(new FindCallback<ParseObject>() {
@@ -91,7 +93,7 @@ public class SignUp extends AppCompatActivity {
             });
 
         }
-        else if(validateSNum(snumStr) == false){
+        else if(sval == false){
             Toast.makeText(getApplicationContext(), "Incorrect input please follow pattern in s# box.", Toast.LENGTH_LONG).show();
         }
         else if(snumStr.equals("") || passStr.equals("")){
@@ -99,13 +101,17 @@ public class SignUp extends AppCompatActivity {
         }
     }
 
-    public static boolean validateSNum (String txt){
+    public static void validateSNum (String txt){
         for(char c: txt.toCharArray()){
             if(Character.isDigit(c) || c == 's'){
-                return true;
+                sval = true;
             }
+            else{
+                sval = false;
+                break;
+            }
+
         }
-        return false;
     }
 
     public void goToHomePage(View v){
