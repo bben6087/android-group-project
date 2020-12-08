@@ -32,7 +32,7 @@
 
 ## Describe the problem/issue your app is going to address.
 
-With this app we hope to provide students a way to set up study sessions with fellow classmates, aslo provide them a way to see other students in the same class as them, hopfully it would encourage more students to group study and inturn learn the subject better.
+With this app we hope to provide students a way to set up study sessions with fellow classmates, also provide them a way to see other students in the same class as them, hopefully it would encourage more students to group study and in turn learn more in their courses.
 
 
 ## The app will have
